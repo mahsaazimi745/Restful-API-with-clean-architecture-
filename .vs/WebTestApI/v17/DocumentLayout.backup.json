@@ -1,0 +1,283 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\visioalstdio\\Restfule\\WebTestApI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.infrastructurelayer\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|solutionrelative:webtestapi.infrastructurelayer\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48DFD215-3BE9-4118-A6E9-BE6382F96352}|WebTestApI\\WebTestApI.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{48DFD215-3BE9-4118-A6E9-BE6382F96352}|WebTestApI\\WebTestApI.csproj|solutionrelative:webtestapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48DFD215-3BE9-4118-A6E9-BE6382F96352}|WebTestApI\\WebTestApI.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{48DFD215-3BE9-4118-A6E9-BE6382F96352}|WebTestApI\\WebTestApI.csproj|solutionrelative:webtestapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48DFD215-3BE9-4118-A6E9-BE6382F96352}|WebTestApI\\WebTestApI.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi\\webtestapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{48DFD215-3BE9-4118-A6E9-BE6382F96352}|WebTestApI\\WebTestApI.csproj|solutionrelative:webtestapi\\webtestapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.infrastructurelayer\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|solutionrelative:webtestapi.infrastructurelayer\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.infrastructurelayer\\service\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|solutionrelative:webtestapi.infrastructurelayer\\service\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.infrastructurelayer\\security\\bcryptpasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|solutionrelative:webtestapi.infrastructurelayer\\security\\bcryptpasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\interface\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.infrastructurelayer\\configurations\\userconfiguration .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAD5C209-E52E-4AEA-B0A0-A470190E24C6}|WebTestApI.InfrastructureLayer\\WebTestApI.InfrastructureLayer.csproj|solutionrelative:webtestapi.infrastructurelayer\\configurations\\userconfiguration .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\valueobjects\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\valueobjects\\email.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\valueobjects\\nationalcode .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\valueobjects\\nationalcode .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\valueobjects\\password.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\valueobjects\\password.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\interface\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\interface\\ipasswordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\valueobjects\\phonenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\valueobjects\\phonenumber.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|d:\\visioalstdio\\restfule\\webtestapi\\webtestapi.corelayer\\valueobjects\\valueobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA77315-B251-48BE-BCF9-3C8068FD440D}|WebTestApI.CoreLayer\\WebTestApI.CoreLayer.csproj|solutionrelative:webtestapi.corelayer\\valueobjects\\valueobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DependencyInjection.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\DependencyInjection\\DependencyInjection.cs",
+              "RelativeDocumentMoniker": "WebTestApI.InfrastructureLayer\\DependencyInjection\\DependencyInjection.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\DependencyInjection\\DependencyInjection.cs*",
+              "RelativeToolTip": "WebTestApI.InfrastructureLayer\\DependencyInjection\\DependencyInjection.cs*",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T11:54:58.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WebTestApI",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI\\WebTestApI.csproj",
+              "RelativeDocumentMoniker": "WebTestApI\\WebTestApI.csproj",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI\\WebTestApI.csproj",
+              "RelativeToolTip": "WebTestApI\\WebTestApI.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-18T11:29:54.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI\\Program.cs",
+              "RelativeDocumentMoniker": "WebTestApI\\Program.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI\\Program.cs",
+              "RelativeToolTip": "WebTestApI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:27:16.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "WebTestApI.InfrastructureLayer\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "WebTestApI.InfrastructureLayer\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:10:42.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BCryptPasswordHasher.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Security\\BCryptPasswordHasher.cs",
+              "RelativeDocumentMoniker": "WebTestApI.InfrastructureLayer\\Security\\BCryptPasswordHasher.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Security\\BCryptPasswordHasher.cs",
+              "RelativeToolTip": "WebTestApI.InfrastructureLayer\\Security\\BCryptPasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T11:39:27.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI\\appsettings.json",
+              "RelativeDocumentMoniker": "WebTestApI\\appsettings.json",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI\\appsettings.json",
+              "RelativeToolTip": "WebTestApI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-17T12:30:27.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserConfiguration .cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Configurations\\UserConfiguration .cs",
+              "RelativeDocumentMoniker": "WebTestApI.InfrastructureLayer\\Configurations\\UserConfiguration .cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Configurations\\UserConfiguration .cs",
+              "RelativeToolTip": "WebTestApI.InfrastructureLayer\\Configurations\\UserConfiguration .cs",
+              "ViewState": "AgIAADkAAAAAAAAAAIBJwE8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:17:30.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Service\\UserRepository.cs",
+              "RelativeDocumentMoniker": "WebTestApI.InfrastructureLayer\\Service\\UserRepository.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.InfrastructureLayer\\Service\\UserRepository.cs",
+              "RelativeToolTip": "WebTestApI.InfrastructureLayer\\Service\\UserRepository.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:51:50.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\Interface\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\Interface\\IUserRepository.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\Interface\\IUserRepository.cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\Interface\\IUserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T12:07:52.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Email.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\Email.cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\ValueObjects\\Email.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\Email.cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\ValueObjects\\Email.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T11:34:24.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NationalCode .cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\NationalCode .cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\ValueObjects\\NationalCode .cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\NationalCode .cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\ValueObjects\\NationalCode .cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAqwD8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-17T11:32:13.311Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IPasswordHasher.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\Interface\\IPasswordHasher.cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\Interface\\IPasswordHasher.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\Interface\\IPasswordHasher.cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\Interface\\IPasswordHasher.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:10:29.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Password.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\Password.cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\ValueObjects\\Password.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\Password.cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\ValueObjects\\Password.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAIBQwC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:05:13.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PhoneNumber.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\PhoneNumber.cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\ValueObjects\\PhoneNumber.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\PhoneNumber.cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\ValueObjects\\PhoneNumber.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:03:36.307Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ValueObject.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\ValueObject.cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\ValueObjects\\ValueObject.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\ValueObjects\\ValueObject.cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\ValueObjects\\ValueObject.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAIBZwCQAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T12:02:23.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\Entity\\User.cs",
+              "RelativeDocumentMoniker": "WebTestApI.CoreLayer\\Entity\\User.cs",
+              "ToolTip": "D:\\visioalstdio\\Restfule\\WebTestApI\\WebTestApI.CoreLayer\\Entity\\User.cs",
+              "RelativeToolTip": "WebTestApI.CoreLayer\\Entity\\User.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAIBJwAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-15T11:23:44.439Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
