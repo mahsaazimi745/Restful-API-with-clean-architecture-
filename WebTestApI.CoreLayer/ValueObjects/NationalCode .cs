@@ -57,7 +57,10 @@ namespace WebTestApI.CoreLayer.ValueObjects
 
         public static NationalCode Create(NationalCode nationalCode)
         {
-            throw new NotImplementedException();
+            if (nationalCode == null)
+                throw new ArgumentNullException(nameof(nationalCode));
+
+            return Create(nationalCode.Value); // استفاده از Create(string)
         }
     }
 

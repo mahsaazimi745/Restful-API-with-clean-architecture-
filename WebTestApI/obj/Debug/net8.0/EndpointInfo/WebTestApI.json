@@ -40,47 +40,20 @@
   "components": {
     "schemas": {
       "Email": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
+        "type": "string",
         "additionalProperties": false
       },
       "NationalCode": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
+        "type": "string",
         "additionalProperties": false
       },
       "Password": {
-        "type": "object",
-        "properties": {
-          "hashedValue": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
+        "type": "string",
+        "additionalProperties": false,
+        "format": "password"
       },
       "PhoneNumber": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
+        "type": "string",
         "additionalProperties": false
       },
       "UserRegisterDto": {

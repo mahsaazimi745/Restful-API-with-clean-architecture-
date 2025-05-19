@@ -38,12 +38,15 @@ namespace WebTestApI.CoreLayer.ValueObjects
 
             public override string ToString() => Value;
 
-            // اگر نیاز ندارید حذفش کنید
-            public static Email Create(Email email)
-            {
-                throw new NotImplementedException();
-            }
+        // اگر نیاز ندارید حذفش کنید
+        public static Email Create(Email email)
+        {
+            if (email == null)
+                throw new ArgumentNullException(nameof(Email));
+
+            return Create(email.Value); // استفاده از Create(string)
         }
+    }
     }
 
        

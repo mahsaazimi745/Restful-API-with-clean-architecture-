@@ -5,6 +5,7 @@ using WebTestApI.ApplicationLayer.Interface;
 using WebTestApI.ApplicationLayer.Services;
 using WebTestApI.CoreLayer.ValueObjects;
 using WebTestApI.InfrastructureLayer.Serialization.Converters;
+using WebTestApI.Swagger;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +20,11 @@ builder.Services.AddControllers()
             options.JsonSerializerOptions.Converters.Add(new PasswordJsonConverter());
         }
     });
-
+builder.Services.AddSwaggerGen(c =>
+{
+    // ? «?‰Ã« ›?· — Swagger —Ê «÷«›Â ò‰
+    c.SchemaFilter<ValueObjectSchemaFilter>();
+});
 // Add services to the container.
 
 builder.Services.AddControllers();

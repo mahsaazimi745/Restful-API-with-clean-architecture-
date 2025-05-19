@@ -37,7 +37,10 @@ namespace WebTestApI.CoreLayer.ValueObjects
 
         public static PhoneNumber Create(PhoneNumber phoneNumber)
         {
-            throw new NotImplementedException();
+            if (phoneNumber == null)
+                throw new ArgumentNullException(nameof(PhoneNumber));
+
+            return Create(phoneNumber.Value); // استفاده از Create(string)
         }
     }
 
