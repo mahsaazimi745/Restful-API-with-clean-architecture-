@@ -17,3 +17,4 @@ D:\visioalstdio\Restfule\WebTestApI\WebTestApI.InfrastructureLayer\obj\Debug\net
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI.InfrastructureLayer\obj\Debug\net8.0\WebTestApI.InfrastructureLayer.pdb
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI.InfrastructureLayer\obj\Debug\net8.0\WebTestApI.InfrastructureLayer.genruntimeconfig.cache
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI.InfrastructureLayer\obj\Debug\net8.0\ref\WebTestApI.InfrastructureLayer.dll
+D:\visioalstdio\Restfule\WebTestApI\WebTestApI.InfrastructureLayer\obj\Debug\net8.0\WebTestApI.InfrastructureLayer.sourcelink.json

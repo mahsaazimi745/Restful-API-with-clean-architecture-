@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace WebTestApI.CoreLayer.ValueObjects
 {
-   public class NationalCode:ValueObject
+
+    public class NationalCode:ValueObject
     {
         public string Value { get; private set; }
 

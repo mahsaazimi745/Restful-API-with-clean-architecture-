@@ -7,34 +7,43 @@ using System.Threading.Tasks;
 
 namespace WebTestApI.CoreLayer.ValueObjects
 {
-    public class Email:ValueObject
+    public class Email : ValueObject
     {
-        public string Value { get; }
+       
+            public string Value { get; }
 
-        public Email(string value)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-                throw new ArgumentException("ایمیل نمی‌تواند خالی باشد.");
+            private Email() { }
 
-            if (!Regex.IsMatch(value, @"^[\w\.-]+@[\w\.-]+\.\w+$"))
-                throw new ArgumentException("فرمت ایمیل معتبر نیست.");
+            private Email(string value)
+            {
+                Value = value;
+            }
 
-            Value = value;
-        }
+            public static Email Create(string value)
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                    throw new ArgumentException("ایمیل نمی‌تواند خالی باشد.");
 
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            yield return Value.ToLower(); // برای نادیده گرفتن بزرگی حروف
-        }
+                if (!Regex.IsMatch(value, @"^[\w\.-]+@[\w\.-]+\.\w+$"))
+                    throw new ArgumentException("فرمت ایمیل معتبر نیست.");
 
-        public override string ToString() => Value;
+                // ایجاد یک نمونه جدید Email با مقدار ورودی و بازگرداندن آن
+                return new Email(value);
+            }
 
-        public static Email Create(Email email)
-        {
-            throw new NotImplementedException();
+            protected override IEnumerable<object> GetEqualityComponents()
+            {
+                yield return Value.ToLower(); // برای نادیده گرفتن بزرگی حروف
+            }
+
+            public override string ToString() => Value;
+
+            // اگر نیاز ندارید حذفش کنید
+            public static Email Create(Email email)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 
-}
-
- 
+       

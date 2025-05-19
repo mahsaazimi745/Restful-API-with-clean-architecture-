@@ -7,41 +7,57 @@ using WebTestApI.CoreLayer.Interface;
 
 namespace WebTestApI.CoreLayer.ValueObjects
 {
- public class Password : ValueObject
+    public class Password : ValueObject
     {
-        public string HashedValue { get; private set; }
+      
+            public string HashedValue { get; private set; }
 
-        // برای EF
-        private Password() { }
+            // برای EF (Entity Framework)
+            private Password() { }
 
+            private Password(string hashedValue)
+            {
+                HashedValue = hashedValue;
+            }
 
-        private Password(string hashedValue)
-        {
-            HashedValue = hashedValue;
+            public Password(Password password)
+            {
+                if (password == null)
+                    throw new ArgumentNullException(nameof(password));
+
+                HashedValue = password.HashedValue;
+            }
+
+            // ساخت پسورد از رمز خام و هش کردن آن
+            public static Password Create(string plainTextPassword, IPasswordHasher passwordHasher)
+            {
+                if (string.IsNullOrWhiteSpace(plainTextPassword))
+                    throw new ArgumentException("رمز عبور نمی‌تواند خالی باشد.", nameof(plainTextPassword));
+
+                if (passwordHasher is null)
+                    throw new ArgumentNullException(nameof(passwordHasher));
+
+                var hashed = passwordHasher.HashPassword(plainTextPassword);
+
+                return new Password(hashed);
+            }
+
+            // ساخت پسورد از مقدار هش‌شده (مثلاً هنگام بازیابی از دیتابیس یا جیسون)
+            public static Password CreateFromHashed(string hashedValue)
+            {
+                if (string.IsNullOrWhiteSpace(hashedValue))
+                    throw new ArgumentException("مقدار هش نمی‌تواند خالی باشد.", nameof(hashedValue));
+
+                return new Password(hashedValue);
+            }
+
+            protected override IEnumerable<object> GetEqualityComponents()
+            {
+                yield return HashedValue;
+            }
+
+            public override string ToString() => HashedValue;
         }
-
-        public Password(Password password)
-        {
-        }
-
-        public static Password Create(string plainTextPassword, IPasswordHasher passwordHasher)
-        {
-            if (string.IsNullOrWhiteSpace(plainTextPassword))
-                throw new ArgumentException("رمز عبور نمی‌تواند خالی باشد.", nameof(plainTextPassword));
-
-            if (passwordHasher is null)
-                throw new ArgumentNullException(nameof(passwordHasher));
-
-            var hashed = passwordHasher.HashPassword(plainTextPassword);
-
-            return new Password(hashed);
-        }
-
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            yield return HashedValue;
-        }
-
-        public override string ToString() => HashedValue;
     }
-}
+
+       

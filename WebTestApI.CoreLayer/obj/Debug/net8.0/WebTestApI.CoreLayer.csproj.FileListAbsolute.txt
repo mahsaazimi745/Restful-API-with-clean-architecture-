@@ -9,3 +9,4 @@ D:\visioalstdio\Restfule\WebTestApI\WebTestApI.CoreLayer\obj\Debug\net8.0\WebTes
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI.CoreLayer\obj\Debug\net8.0\refint\WebTestApI.CoreLayer.dll
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI.CoreLayer\obj\Debug\net8.0\WebTestApI.CoreLayer.pdb
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI.CoreLayer\obj\Debug\net8.0\ref\WebTestApI.CoreLayer.dll
+D:\visioalstdio\Restfule\WebTestApI\WebTestApI.CoreLayer\obj\Debug\net8.0\WebTestApI.CoreLayer.sourcelink.json

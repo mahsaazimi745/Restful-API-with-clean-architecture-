@@ -93,3 +93,4 @@ D:\visioalstdio\Restfule\WebTestApI\WebTestApI\obj\Debug\net8.0\refint\WebTestAp
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI\obj\Debug\net8.0\WebTestApI.pdb
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI\obj\Debug\net8.0\WebTestApI.genruntimeconfig.cache
 D:\visioalstdio\Restfule\WebTestApI\WebTestApI\obj\Debug\net8.0\ref\WebTestApI.dll
+D:\visioalstdio\Restfule\WebTestApI\WebTestApI\obj\Debug\net8.0\WebTestApI.sourcelink.json
