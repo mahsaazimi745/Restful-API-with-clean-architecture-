@@ -14,33 +14,47 @@ namespace WebTestApI.ApplicationLayer.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IPasswordHasher _passwordHasher;
 
-        public UserService(IUserRepository userRepository)
+        public UserService(IUserRepository userRepository, IPasswordHasher passwordHasher)
         {
             _userRepository = userRepository;
+            _passwordHasher = passwordHasher;
         }
 
-        public async Task<Guid> RegisterAsync(UserRegisterDto dto)
+        public async Task<bool> RegisterAsync(UserRegisterDto dto)
         {
+            // بررسی تکراری نبودن شماره یا ایمیل
+            var existingByPhone = await _userRepository.GetByPhoneNumberAsync(dto.PhoneNumber);
+            if (existingByPhone != null)
+                throw new Exception("شماره تلفن قبلاً ثبت شده است.");
 
+            var existingByEmail = await _userRepository.GetByEmailAsync(dto.Email);
+            if (existingByEmail != null)
+                throw new Exception("ایمیل قبلاً ثبت شده است.");
 
+            // ساخت پسورد هش‌شده
+            /* var password = Password.Create(dto.Password, _passwordHasher);*/
+            
+            var password = Password.Create(dto.Password, _passwordHasher);
+
+            // ساخت کاربر جدید
             var user = new User(
-      dto.FirstName,
-      dto.LastName,
-      dto.FatherName,
-      dto.Age,
-      NationalCode.Create(dto.NationalCode),
-      PhoneNumber.Create(dto.PhoneNumber),
-      Email.Create(dto.Email),
-      new Password(dto.Password)
+                firstName: dto.FirstName,
+                lastName: dto.LastName,
+                fatherName: dto.FatherName,
+                age: dto.Age,
+                nationalCode: dto.NationalCode,
+                phoneNumber: dto.PhoneNumber,
+                email: dto.Email,
+                password: password
+            );
 
-
-
-  );
-
+            // اضافه کردن کاربر به دیتابیس
             await _userRepository.AddAsync(user);
-
-            return user.Id;
+            return await _userRepository.SaveChangesAsync();
         }
     }
 }
+
+

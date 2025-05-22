@@ -1,4 +1,5 @@
 using WebTestApI.CoreLayer.Interface;
+using WebTestApI.InfrastructureLayer.Repository;
 using WebTestApI.InfrastructureLayer.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using WebTestApI.ApplicationLayer.Interface;
@@ -6,6 +7,8 @@ using WebTestApI.ApplicationLayer.Services;
 using WebTestApI.CoreLayer.ValueObjects;
 using WebTestApI.InfrastructureLayer.Serialization.Converters;
 using WebTestApI.Swagger;
+using WebTestApI.InfrastructureLayer.Security;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +28,7 @@ builder.Services.AddSwaggerGen(c =>
     // ? «?‰Ã« ›?· — Swagger —Ê «÷«›Â ò‰
     c.SchemaFilter<ValueObjectSchemaFilter>();
 });
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -41,8 +45,11 @@ builder.Services.AddControllers();
    
 
 builder.Services.AddInfrastructure(builder.Configuration);
-
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
+
 //builder.Services.AddInfrastructure(configuration);
 //builder.Services.AddScoped<IUserRepository, UserRepository>();
 /*builder.Services.AddDbContext<ApplicationDbContext>(options =>

@@ -25,4 +25,8 @@
     <ProjectReference Include="..\WebTestApI.CoreLayer\WebTestApI.CoreLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+
 </Project>

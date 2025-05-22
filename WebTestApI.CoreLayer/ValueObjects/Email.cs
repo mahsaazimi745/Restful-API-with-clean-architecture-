@@ -9,34 +9,27 @@ namespace WebTestApI.CoreLayer.ValueObjects
 {
     public class Email : ValueObject
     {
-       
-            public string Value { get; }
 
-            private Email() { }
+        public string Value { get; private set; }
 
-            private Email(string value)
-            {
-                Value = value;
-            }
+        private Email() { }
 
-            public static Email Create(string value)
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("ایمیل نمی‌تواند خالی باشد.");
+        private Email(string value)
+        {
+            Value = value;
+        }
 
-                if (!Regex.IsMatch(value, @"^[\w\.-]+@[\w\.-]+\.\w+$"))
-                    throw new ArgumentException("فرمت ایمیل معتبر نیست.");
+        public static Email Create(string value)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+                throw new ArgumentException("ایمیل نمی‌تواند خالی باشد.");
 
-                // ایجاد یک نمونه جدید Email با مقدار ورودی و بازگرداندن آن
-                return new Email(value);
-            }
+            if (!Regex.IsMatch(value, @"^[\w\.-]+@[\w\.-]+\.\w+$"))
+                throw new ArgumentException("فرمت ایمیل معتبر نیست.");
 
-            protected override IEnumerable<object> GetEqualityComponents()
-            {
-                yield return Value.ToLower(); // برای نادیده گرفتن بزرگی حروف
-            }
-
-            public override string ToString() => Value;
+            // ایجاد یک نمونه جدید Email با مقدار ورودی و بازگرداندن آن
+            return new Email(value);
+        }
 
         // اگر نیاز ندارید حذفش کنید
         public static Email Create(Email email)
@@ -46,7 +39,25 @@ namespace WebTestApI.CoreLayer.ValueObjects
 
             return Create(email.Value); // استفاده از Create(string)
         }
-    }
-    }
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            // برای مقایسه، حروف بزرگ و کوچک نادیده گرفته می‌شود
+            yield return Value.ToLower();
+        }
 
-       
+        public override string ToString() => Value;
+        // ✅ اضافه کردن operator های مقایسه
+        public static bool operator ==(Email left, Email right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(Email left, Email right)
+        {
+            return !Equals(left, right);
+        }
+    }
+}
+
+
+

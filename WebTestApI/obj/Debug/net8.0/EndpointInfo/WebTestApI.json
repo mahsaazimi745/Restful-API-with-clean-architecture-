@@ -47,11 +47,6 @@
         "type": "string",
         "additionalProperties": false
       },
-      "Password": {
-        "type": "string",
-        "additionalProperties": false,
-        "format": "password"
-      },
       "PhoneNumber": {
         "type": "string",
         "additionalProperties": false
@@ -85,7 +80,8 @@
             "$ref": "#/components/schemas/Email"
           },
           "password": {
-            "$ref": "#/components/schemas/Password"
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

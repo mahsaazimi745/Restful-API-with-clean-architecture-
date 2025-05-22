@@ -42,6 +42,15 @@ namespace WebTestApI.CoreLayer.ValueObjects
 
             return Create(phoneNumber.Value); // استفاده از Create(string)
         }
+        public static bool operator ==(PhoneNumber left, PhoneNumber right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(PhoneNumber left, PhoneNumber right)
+        {
+            return !Equals(left, right);
+        }
     }
 
 }

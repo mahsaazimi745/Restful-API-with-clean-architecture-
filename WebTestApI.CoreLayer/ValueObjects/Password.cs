@@ -11,9 +11,10 @@ namespace WebTestApI.CoreLayer.ValueObjects
     {
       
             public string HashedValue { get; private set; }
+        public string Value => HashedValue;
 
-            // برای EF (Entity Framework)
-            private Password() { }
+        // برای EF (Entity Framework)
+        private Password() { }
 
             private Password(string hashedValue)
             {
@@ -57,7 +58,24 @@ namespace WebTestApI.CoreLayer.ValueObjects
             }
 
             public override string ToString() => HashedValue;
+
+        /*  public static Password Create(Password password, IPasswordHasher passwordHasher)
+          {
+              throw new NotImplementedException();
+          }*/
+        
+
+        // ✅ اضافه کردن operator های مقایسه
+        public static bool operator ==(Password left,Password right)
+        {
+            return Equals(left, right);
         }
+
+        public static bool operator !=(Password left, Password right)
+        {
+            return !Equals(left, right);
+        }
+    }
     }
 
        

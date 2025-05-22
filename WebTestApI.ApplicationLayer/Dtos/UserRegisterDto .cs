@@ -16,7 +16,7 @@ namespace WebTestApI.ApplicationLayer.Dtos
         public NationalCode NationalCode { get; set; }
         public PhoneNumber PhoneNumber { get; set; }
         public Email Email { get; set; }
-        public Password Password { get; set; }
+        public string  Password { get; set; }
 
     }
 }

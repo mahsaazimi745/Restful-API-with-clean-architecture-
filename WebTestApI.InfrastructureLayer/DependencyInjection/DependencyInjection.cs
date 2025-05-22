@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebTestApI.CoreLayer.Interface;
 using WebTestApI.InfrastructureLayer.Data;
-using WebTestApI.InfrastructureLayer.Service;
+
 
 namespace WebTestApI.InfrastructureLayer.DependencyInjection
 {
@@ -19,7 +19,7 @@ namespace WebTestApI.InfrastructureLayer.DependencyInjection
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("Defaultttt")));
 
-            services.AddScoped<IUserRepository, UserRepository>();
+         
             // بقیه‌ی سرویس‌هات...
 
             return services;

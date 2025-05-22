@@ -9,6 +9,6 @@ namespace WebTestApI.ApplicationLayer.Interface
 {
   public interface IUserService
     {
-        Task<Guid> RegisterAsync(UserRegisterDto dto);
+        Task<bool> RegisterAsync(UserRegisterDto dto);
     }
 }

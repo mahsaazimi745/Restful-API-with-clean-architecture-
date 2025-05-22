@@ -62,6 +62,16 @@ namespace WebTestApI.CoreLayer.ValueObjects
 
             return Create(nationalCode.Value); // استفاده از Create(string)
         }
+        // ✅ اضافه کردن operator های مقایسه
+        public static bool operator ==(NationalCode left, NationalCode right)
+        {
+            return Equals(left, right);
+        }
+
+        public static bool operator !=(NationalCode left, NationalCode right)
+        {
+            return !Equals(left, right);
+        }
     }
 
 
