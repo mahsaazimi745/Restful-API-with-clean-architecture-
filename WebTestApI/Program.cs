@@ -45,10 +45,7 @@ builder.Services.AddControllers();
    
 
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
+
 
 //builder.Services.AddInfrastructure(configuration);
 //builder.Services.AddScoped<IUserRepository, UserRepository>();

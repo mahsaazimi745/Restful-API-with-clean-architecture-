@@ -18,6 +18,9 @@ namespace WebTestApI.CoreLayer.Entity
         public PhoneNumber PhoneNumber { get; private set; }
         public Email Email { get; private set; }
         public Password passwordHash { get; private set; }
+        #region Navigation
+        public ICollection<UserRole> UserRoles { get; private set; }
+        #endregion
         private User() { }
         public User(string firstName, string lastName, string fatherName, int age, NationalCode nationalCode, PhoneNumber phoneNumber, Email email, Password password)
         {

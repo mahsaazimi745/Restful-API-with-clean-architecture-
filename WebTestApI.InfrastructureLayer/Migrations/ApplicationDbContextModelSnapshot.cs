@@ -22,6 +22,39 @@ namespace WebTestApI.InfrastructureLayer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("WebTestApI.CoreLayer.Entity.Role", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RuleName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Roles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f5a21fd5-3e4c-4a0f-bb6d-0f4206a7c79c"),
+                            RuleName = "Admin"
+                        },
+                        new
+                        {
+                            Id = new Guid("bd3f7f57-c60d-4c91-8fd7-92f7f4ea10a6"),
+                            RuleName = "Coach"
+                        },
+                        new
+                        {
+                            Id = new Guid("d31f6dc7-9426-44b8-bbb2-7f5a42c1139b"),
+                            RuleName = "Writer"
+                        });
+                });
+
             modelBuilder.Entity("WebTestApI.CoreLayer.Entity.User", b =>
                 {
                     b.Property<Guid>("Id")
@@ -49,6 +82,21 @@ namespace WebTestApI.InfrastructureLayer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("WebTestApI.CoreLayer.Entity.UserRole", b =>
+                {
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("WebTestApI.CoreLayer.Entity.User", b =>
@@ -140,6 +188,35 @@ namespace WebTestApI.InfrastructureLayer.Migrations
 
                     b.Navigation("passwordHash")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("WebTestApI.CoreLayer.Entity.UserRole", b =>
+                {
+                    b.HasOne("WebTestApI.CoreLayer.Entity.Role", "Role")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WebTestApI.CoreLayer.Entity.User", "User")
+                        .WithMany("UserRoles")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Role");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("WebTestApI.CoreLayer.Entity.Role", b =>
+                {
+                    b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("WebTestApI.CoreLayer.Entity.User", b =>
+                {
+                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }

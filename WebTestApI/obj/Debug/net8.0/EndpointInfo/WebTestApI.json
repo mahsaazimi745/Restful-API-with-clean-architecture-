@@ -82,6 +82,10 @@
           "password": {
             "type": "string",
             "nullable": true
+          },
+          "roleName": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

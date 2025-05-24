@@ -6,8 +6,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebTestApI.ApplicationLayer.Interface;
+using WebTestApI.ApplicationLayer.Services;
 using WebTestApI.CoreLayer.Interface;
 using WebTestApI.InfrastructureLayer.Data;
+using WebTestApI.InfrastructureLayer.Repository;
+using WebTestApI.InfrastructureLayer.Security;
 
 
 namespace WebTestApI.InfrastructureLayer.DependencyInjection
@@ -19,7 +23,13 @@ namespace WebTestApI.InfrastructureLayer.DependencyInjection
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("Defaultttt")));
 
-         
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
+            services.AddScoped<IRoleRepository,RoleRepository>();
+            services.AddScoped<IUserRoleRepository, UserRoleRepository>();
+
             // بقیه‌ی سرویس‌هات...
 
             return services;

@@ -71,6 +71,10 @@ namespace WebTestApI.InfrastructureLayer.Configurations
                   .IsRequired();
             });
 
+            builder.HasMany(u => u.UserRoles)
+                 .WithOne(ur => ur.User)
+                 .HasForeignKey(ur => ur.UserId);
+
             // Ignore computed properties
             builder.Ignore(u => u.FullName);
         }
