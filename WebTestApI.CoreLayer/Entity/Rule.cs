@@ -9,7 +9,7 @@ namespace WebTestApI.CoreLayer.Entity
     public class Role
     {
         public Guid Id { get; set; }
-        public string RuleName { get;  set; }
+        public string RuleName { get; set; }
 
         public ICollection<UserRole> UserRoles { get; private set; }
 
@@ -18,7 +18,7 @@ namespace WebTestApI.CoreLayer.Entity
         public Role(string ruleName)
         {
             Id = Guid.NewGuid();
-           RuleName  = ruleName ?? throw new ArgumentNullException(nameof(ruleName));
+            RuleName = ruleName ?? throw new ArgumentNullException(nameof(ruleName));
             UserRoles = new List<UserRole>();
 
         }

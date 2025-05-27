@@ -27,8 +27,9 @@ namespace WebTestApI.InfrastructureLayer.DependencyInjection
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPasswordHasher, BCryptPasswordHasher>();
-            services.AddScoped<IRoleRepository,RoleRepository>();
+            services.AddScoped<IRoleRepository, RoleRepository>();
             services.AddScoped<IUserRoleRepository, UserRoleRepository>();
+            services.AddScoped<IApprovalService, ApprovalService>();
 
             // بقیه‌ی سرویس‌هات...
 

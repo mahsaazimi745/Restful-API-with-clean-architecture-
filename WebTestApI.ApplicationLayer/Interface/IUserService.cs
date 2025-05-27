@@ -9,6 +9,8 @@ namespace WebTestApI.ApplicationLayer.Interface
 {
   public interface IUserService
     {
-        Task<bool> RegisterAsync(UserRegisterDto dto);
+        Task<bool> RegisterStudentAsync(StudentRegisterDto dto);
+        Task<bool> RegisterCoachAsync(CoachRegisterDto dto);
+        Task<bool> ApproveUserAsync(Guid userId);  // تأیید توسط مربی یا ادمین
     }
 }

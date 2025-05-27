@@ -47,7 +47,8 @@ namespace WebTestApI.InfrastructureLayer.Configurations
             builder.HasData(
                 new Role("Admin") { Id = Guid.Parse("f5a21fd5-3e4c-4a0f-bb6d-0f4206a7c79c") },
                 new Role("Coach") { Id = Guid.Parse("bd3f7f57-c60d-4c91-8fd7-92f7f4ea10a6") },
-                new Role("Writer") { Id = Guid.Parse("d31f6dc7-9426-44b8-bbb2-7f5a42c1139b") }
+                new Role("Writer") { Id = Guid.Parse("d31f6dc7-9426-44b8-bbb2-7f5a42c1139b") },
+                new Role("Student") { Id = Guid.Parse("6a942f50-33ea-4b18-8041-65b11422f1f5") }
             );
         }
     }

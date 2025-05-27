@@ -52,6 +52,11 @@ namespace WebTestApI.InfrastructureLayer.Migrations
                         {
                             Id = new Guid("d31f6dc7-9426-44b8-bbb2-7f5a42c1139b"),
                             RuleName = "Writer"
+                        },
+                        new
+                        {
+                            Id = new Guid("6a942f50-33ea-4b18-8041-65b11422f1f5"),
+                            RuleName = "Student"
                         });
                 });
 
@@ -78,6 +83,9 @@ namespace WebTestApI.InfrastructureLayer.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

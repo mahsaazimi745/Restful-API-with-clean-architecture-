@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using WebTestApI.ApplicationLayer.Dtos;
 using WebTestApI.ApplicationLayer.Interface;
@@ -18,33 +15,20 @@ namespace WebTestApI.ApplicationLayer.Services
         private readonly IUserRoleRepository _userRoleRepository;
         private readonly IRoleRepository _roleRepository;
 
-        public UserService(IUserRepository userRepository, IPasswordHasher passwordHasher, IUserRoleRepository userRoleRepository, IRoleRepository roleRepository)
+        public UserService(IUserRepository userRepository, IPasswordHasher passwordHasher,
+            IUserRoleRepository userRoleRepository, IRoleRepository roleRepository)
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
-            _userRoleRepository= userRoleRepository;
-            _roleRepository= roleRepository;
-
+            _userRoleRepository = userRoleRepository;
+            _roleRepository = roleRepository;
         }
 
-        public async Task<bool> RegisterAsync(UserRegisterDto dto)
+        public async Task<bool> RegisterStudentAsync(StudentRegisterDto dto)
         {
-            // بررسی تکراری نبودن شماره یا ایمیل
-            var existingByPhone = await _userRepository.GetByPhoneNumberAsync(dto.PhoneNumber);
-            if (existingByPhone != null)
-                throw new Exception("شماره تلفن قبلاً ثبت شده است.");
-
-            var existingByEmail = await _userRepository.GetByEmailAsync(dto.Email);
-            if (existingByEmail != null)
-                throw new Exception("ایمیل قبلاً ثبت شده است.");
-
-            // ساخت پسورد هش‌شده
-            /* var password = Password.Create(dto.Password, _passwordHasher);*/
-
             var password = Password.Create(dto.Password, _passwordHasher);
 
-            // ساخت کاربر جدید
-            var user = new User(
+            var student = new Student(
                 firstName: dto.FirstName,
                 lastName: dto.LastName,
                 fatherName: dto.FatherName,
@@ -52,25 +36,53 @@ namespace WebTestApI.ApplicationLayer.Services
                 nationalCode: dto.NationalCode,
                 phoneNumber: dto.PhoneNumber,
                 email: dto.Email,
-                password: password
+                password: password,
+               
+                parentsPhoneNumber: dto.ParentsPhoneNumber
             );
 
-            // اضافه کردن کاربر به دیتابیس
-            await _userRepository.AddAsync(user);
-            // تعیین نقش کاربر (اگر در DTO مشخص نشده، پیش‌فرض "Student")
-            var roleName = string.IsNullOrEmpty(dto.RoleName) ? "Student" : dto.RoleName;
-            var role = await _roleRepository.GetByNameAsync(roleName);
-            if (role == null)
-                throw new Exception("نقش مورد نظر یافت نشد.");
+            await _userRepository.AddAsync(student);
 
-            // اتصال نقش به کاربر
-            var userRole = new UserRole(user.Id, role.Id);
-            await _userRoleRepository.AddAsync(userRole);
-            // ذخیره‌سازی نهایی
+            var studentRole = await _roleRepository.GetByNameAsync("Student");
+            await _userRoleRepository.AddAsync(new UserRole(student.Id, studentRole.Id));
+
+            return await _userRepository.SaveChangesAsync();
+        }
+
+        public async Task<bool> RegisterCoachAsync(CoachRegisterDto dto)
+        {
+            var password = Password.Create(dto.Password, _passwordHasher);
+
+            var coach = new Coach(
+                firstName: dto.FirstName,
+                lastName: dto.LastName,
+                fatherName: dto.FatherName,
+                age: dto.Age,
+                nationalCode: dto.NationalCode,
+                phoneNumber: dto.PhoneNumber,
+                email: dto.Email,
+                password: password,
+                expertise: dto.Expertise
+            );
+
+            await _userRepository.AddAsync(coach);
+
+            var coachRole = await _roleRepository.GetByNameAsync("Coach");
+            await _userRoleRepository.AddAsync(new UserRole(coach.Id, coachRole.Id));
+
+            return await _userRepository.SaveChangesAsync();
+        }
+
+        public async Task<bool> ApproveUserAsync(Guid userId)
+        {
+            var user = await _userRepository.GetByIdAsync(userId);
+            if (user == null)
+                throw new Exception("کاربر یافت نشد.");
+
+            // فرض: تأیید دستی (در اینجا فقط ذخیره می‌شه، ولی می‌تونی یک فلگ IsApproved هم به مدل اضافه کنی)
+            // user.Approve();   ← در صورت وجود متد یا فیلد مربوط
 
             return await _userRepository.SaveChangesAsync();
         }
     }
 }
-
-

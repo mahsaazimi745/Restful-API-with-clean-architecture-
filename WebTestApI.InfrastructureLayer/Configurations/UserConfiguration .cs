@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebTestApI.CoreLayer.Entity;
 
 namespace WebTestApI.InfrastructureLayer.Configurations
@@ -24,7 +19,7 @@ namespace WebTestApI.InfrastructureLayer.Configurations
                 .HasMaxLength(50)
                 .IsRequired();
 
-            builder.Property(u => u.LatstName)
+            builder.Property(u => u.LastName)  // اصلاح شد
                 .HasMaxLength(50)
                 .IsRequired();
 
@@ -63,7 +58,7 @@ namespace WebTestApI.InfrastructureLayer.Configurations
             });
 
             // Password ValueObject mapping
-            builder.OwnsOne(u => u.passwordHash, pw =>
+            builder.OwnsOne(u => u.PasswordHash, pw =>
             {
                 pw.Property(p => p.HashedValue)
                   .HasColumnName("PasswordHash")
@@ -80,5 +75,3 @@ namespace WebTestApI.InfrastructureLayer.Configurations
         }
     }
 }
-  
-  

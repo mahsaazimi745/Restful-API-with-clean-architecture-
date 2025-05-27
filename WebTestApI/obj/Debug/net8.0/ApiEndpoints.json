@@ -1,8 +1,56 @@
 [
   {
+    "ContainingType": "WebTestApI.Controllers.ApprovalController",
+    "Method": "ApproveUser",
+    "RelativePath": "api/Approval/approve/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebTestApI.Controllers.ApprovalController",
+    "Method": "RejectUser",
+    "RelativePath": "api/Approval/reject/{userId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebTestApI.Controllers.UsersController",
-    "Method": "Register",
-    "RelativePath": "api/Users/register",
+    "Method": "RegisterCoach",
+    "RelativePath": "api/Users/register-coach",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "WebTestApI.ApplicationLayer.Dtos.UserRegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebTestApI.Controllers.UsersController",
+    "Method": "RegisterStudent",
+    "RelativePath": "api/Users/register-student",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

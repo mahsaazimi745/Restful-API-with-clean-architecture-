@@ -5,7 +5,84 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Users/register": {
+    "/api/Approval/approve/{userId}": {
+      "put": {
+        "tags": [
+          "Approval"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Approval/reject/{userId}": {
+      "put": {
+        "tags": [
+          "Approval"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Users/register-student": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UserRegisterDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Users/register-coach": {
       "post": {
         "tags": [
           "Users"
@@ -80,10 +157,6 @@
             "$ref": "#/components/schemas/Email"
           },
           "password": {
-            "type": "string",
-            "nullable": true
-          },
-          "roleName": {
             "type": "string",
             "nullable": true
           }
