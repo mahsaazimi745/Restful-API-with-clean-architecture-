@@ -1,15 +1,41 @@
 [
   {
     "ContainingType": "WebTestApI.Controllers.ApprovalController",
-    "Method": "ApproveUser",
-    "RelativePath": "api/Approval/approve/{userId}",
+    "Method": "ApproveCoach",
+    "RelativePath": "api/Approval/approve/coach/{coachId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userId",
+        "Name": "coachId",
         "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "adminId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebTestApI.Controllers.ApprovalController",
+    "Method": "ApproveStudent",
+    "RelativePath": "api/Approval/approve/student/{studentId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "studentId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "WebTestApI.Controllers.ApprovalController\u002BApproveStudentRequest",
         "IsRequired": true
       }
     ],
@@ -41,7 +67,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "WebTestApI.ApplicationLayer.Dtos.UserRegisterDto",
+        "Type": "WebTestApI.ApplicationLayer.Dtos.CoachRegisterDto",
         "IsRequired": true
       }
     ],
@@ -57,7 +83,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "WebTestApI.ApplicationLayer.Dtos.UserRegisterDto",
+        "Type": "WebTestApI.ApplicationLayer.Dtos.StudentRegisterDto",
         "IsRequired": true
       }
     ],

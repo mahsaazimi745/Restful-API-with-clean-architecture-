@@ -10,20 +10,25 @@ namespace WebTestApI.CoreLayer.Entity
 {
     public abstract class User
     {
-        public Guid Id { get; private set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; } // ✅ اصلاح شد
-        public int Age { get; private set; }
-        public string FatherName { get; private set; }
-        public NationalCode NationalCode { get; private set; }
-        public PhoneNumber PhoneNumber { get; private set; }
-        public Email Email { get; private set; }
-        public Password PasswordHash { get; private set; }
-        public ApprovalStatus Status { get; private set; } = ApprovalStatus.Pending;
+        public Guid Id { get; protected set; }
+        public string FirstName { get; protected set; }
+        public string LastName { get; protected set; }
+        public int Age { get; protected set; }
+        public string FatherName { get; protected set; }
+        public NationalCode NationalCode { get; protected set; }
+        public PhoneNumber PhoneNumber { get; protected set; }
+        public Email Email { get; protected set; }
+        public Password PasswordHash { get; protected set; }
 
-        #region Navigation
-        public ICollection<UserRole> UserRoles { get; private set; } = new List<UserRole>();
-        #endregion
+        public ApprovalStatus Status { get; protected set; } = ApprovalStatus.Pending;
+
+        public DateTime? ApprovedDate { get; protected set; }
+        public Guid? ApprovedById { get; protected set; }
+        public User? ApprovedBy { get; protected set; }
+
+        public bool IsApproved => Status == ApprovalStatus.Approved;
+
+        public ICollection<UserRole> UserRoles { get; protected set; } = new List<UserRole>();
 
         protected User() { }
 
@@ -32,9 +37,8 @@ namespace WebTestApI.CoreLayer.Entity
                        Email email, Password password)
         {
             Id = Guid.NewGuid();
-
             FirstName = firstName ?? throw new ArgumentNullException(nameof(firstName));
-            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName)); // ✅ اصلاح شد
+            LastName = lastName ?? throw new ArgumentNullException(nameof(lastName));
             FatherName = fatherName ?? throw new ArgumentNullException(nameof(fatherName));
             Age = age > 0 ? age : throw new ArgumentException("Age must be positive.", nameof(age));
             NationalCode = nationalCode ?? throw new ArgumentNullException(nameof(nationalCode));
@@ -43,10 +47,28 @@ namespace WebTestApI.CoreLayer.Entity
             PasswordHash = password ?? throw new ArgumentNullException(nameof(password));
         }
 
-        public void Approve() => Status = ApprovalStatus.Approved;
-        public void Reject() => Status = ApprovalStatus.Rejected;
-        public string FullName => $"{FirstName} {LastName}"; // ✅ اصلاح شد
+        public string FullName => $"{FirstName} {LastName}";
+
+        public void Approve(Guid approverId)
+        {
+            Status = ApprovalStatus.Approved;
+            ApprovedById = approverId;
+            ApprovedDate = DateTime.UtcNow;
+        }
+
+        public void Reject()
+        {
+            Status = ApprovalStatus.Rejected;
+            ApprovedById = null;
+            ApprovedDate = null;
+        }
     }
 
+
+
+
 }
+    
+
+
 

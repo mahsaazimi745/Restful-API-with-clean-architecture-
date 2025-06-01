@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebTestApI.ApplicationLayer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b24fd37f1bee400a4c769f62466be7e3641390c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6d67ffb3423016d5a35383cd8ec7cf192f02ce8")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebTestApI.ApplicationLayer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebTestApI.ApplicationLayer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebTestApI.CoreLayer.Entity;
 using WebTestApI.InfrastructureLayer.Configurations;
+using WebTestApI.InfrastructureLayer.Configurations;
 
 namespace WebTestApI.InfrastructureLayer.Data
 {

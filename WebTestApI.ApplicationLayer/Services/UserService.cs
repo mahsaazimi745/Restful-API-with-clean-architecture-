@@ -15,8 +15,11 @@ namespace WebTestApI.ApplicationLayer.Services
         private readonly IUserRoleRepository _userRoleRepository;
         private readonly IRoleRepository _roleRepository;
 
-        public UserService(IUserRepository userRepository, IPasswordHasher passwordHasher,
-            IUserRoleRepository userRoleRepository, IRoleRepository roleRepository)
+        public UserService(
+            IUserRepository userRepository,
+            IPasswordHasher passwordHasher,
+            IUserRoleRepository userRoleRepository,
+            IRoleRepository roleRepository)
         {
             _userRepository = userRepository;
             _passwordHasher = passwordHasher;
@@ -29,16 +32,15 @@ namespace WebTestApI.ApplicationLayer.Services
             var password = Password.Create(dto.Password, _passwordHasher);
 
             var student = new Student(
-                firstName: dto.FirstName,
-                lastName: dto.LastName,
-                fatherName: dto.FatherName,
-                age: dto.Age,
-                nationalCode: dto.NationalCode,
-                phoneNumber: dto.PhoneNumber,
-                email: dto.Email,
-                password: password,
-               
-                parentsPhoneNumber: dto.ParentsPhoneNumber
+                 firstName: dto.FirstName,
+    lastName: dto.LastName,
+    fatherName: dto.FatherName,
+    age: dto.Age,
+    nationalCode: NationalCode.Create(dto.NationalCode),
+    phoneNumber: PhoneNumber.Create(dto.PhoneNumber),
+    email: Email.Create(dto.Email),
+    password: Password.Create(dto.Password, _passwordHasher),
+    parentsPhoneNumber: PhoneNumber.Create(dto.ParentsPhoneNumber)
             );
 
             await _userRepository.AddAsync(student);
@@ -54,15 +56,17 @@ namespace WebTestApI.ApplicationLayer.Services
             var password = Password.Create(dto.Password, _passwordHasher);
 
             var coach = new Coach(
-                firstName: dto.FirstName,
-                lastName: dto.LastName,
-                fatherName: dto.FatherName,
-                age: dto.Age,
-                nationalCode: dto.NationalCode,
-                phoneNumber: dto.PhoneNumber,
-                email: dto.Email,
-                password: password,
-                expertise: dto.Expertise
+                 firstName: dto.FirstName,
+    lastName: dto.LastName,
+    fatherName: dto.FatherName,
+    age: dto.Age,
+    nationalCode: NationalCode.Create(dto.NationalCode),
+    phoneNumber: PhoneNumber.Create(dto.PhoneNumber),
+    email: Email.Create(dto.Email),
+    password: Password.Create(dto.Password, _passwordHasher),
+    specialty: dto.Specialty,
+    experienceYears: dto.ExperienceYears,
+    certificationNumber: dto.CertificationNumber
             );
 
             await _userRepository.AddAsync(coach);
@@ -79,8 +83,8 @@ namespace WebTestApI.ApplicationLayer.Services
             if (user == null)
                 throw new Exception("کاربر یافت نشد.");
 
-            // فرض: تأیید دستی (در اینجا فقط ذخیره می‌شه، ولی می‌تونی یک فلگ IsApproved هم به مدل اضافه کنی)
-            // user.Approve();   ← در صورت وجود متد یا فیلد مربوط
+            // اینجا می‌تونی وضعیت تایید رو ست کنی اگر چنین فیلدی داری
+            // مثلا user.IsApproved = true;
 
             return await _userRepository.SaveChangesAsync();
         }

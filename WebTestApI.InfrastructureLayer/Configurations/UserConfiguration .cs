@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WebTestApI.CoreLayer.Entity;
+using WebTestApI.CoreLayer.ValueObjects;
+using WebTestApI.CoreLayer.Enums;
 
 namespace WebTestApI.InfrastructureLayer.Configurations
 {
@@ -8,29 +10,41 @@ namespace WebTestApI.InfrastructureLayer.Configurations
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
+            // Table per type
+            builder.UseTptMappingStrategy();
             builder.ToTable("Users");
 
             builder.HasKey(u => u.Id);
 
-            builder.Property(u => u.Id)
-                .IsRequired();
-
             builder.Property(u => u.FirstName)
-                .HasMaxLength(50)
-                .IsRequired();
+                   .HasMaxLength(50)
+                   .IsRequired();
 
-            builder.Property(u => u.LastName)  // اصلاح شد
-                .HasMaxLength(50)
-                .IsRequired();
+            builder.Property(u => u.LastName)
+                   .HasMaxLength(50)
+                   .IsRequired();
 
             builder.Property(u => u.FatherName)
-                .HasMaxLength(50)
-                .IsRequired();
+                   .HasMaxLength(50)
+                   .IsRequired();
 
             builder.Property(u => u.Age)
-                .IsRequired();
+                   .IsRequired();
 
-            // NationalCode ValueObject mapping
+            builder.Property(u => u.Status)
+                   .HasConversion<int>()
+                   .IsRequired();
+
+            builder.Property(u => u.ApprovedDate);
+
+            builder.Property(u => u.ApprovedById);
+
+            builder.HasOne(u => u.ApprovedBy)
+                   .WithMany()
+                   .HasForeignKey(u => u.ApprovedById)
+                   .OnDelete(DeleteBehavior.NoAction);
+
+            // Value Objects:
             builder.OwnsOne(u => u.NationalCode, nc =>
             {
                 nc.Property(n => n.Value)
@@ -39,39 +53,35 @@ namespace WebTestApI.InfrastructureLayer.Configurations
                   .IsRequired();
             });
 
-            // PhoneNumber ValueObject mapping
-            builder.OwnsOne(u => u.PhoneNumber, ph =>
+            builder.OwnsOne(u => u.PhoneNumber, pn =>
             {
-                ph.Property(p => p.Value)
+                pn.Property(p => p.Value)
                   .HasColumnName("PhoneNumber")
-                  .HasMaxLength(15)
+                  .HasMaxLength(11)
                   .IsRequired();
             });
 
-            // Email ValueObject mapping
-            builder.OwnsOne(u => u.Email, em =>
+            builder.OwnsOne(u => u.Email, e =>
             {
-                em.Property(e => e.Value)
+                e.Property(ea => ea.Value)
                   .HasColumnName("Email")
                   .HasMaxLength(100)
                   .IsRequired();
             });
 
-            // Password ValueObject mapping
-            builder.OwnsOne(u => u.PasswordHash, pw =>
+            builder.OwnsOne(u => u.PasswordHash, p =>
             {
-                pw.Property(p => p.HashedValue)
-                  .HasColumnName("PasswordHash")
-                  .HasMaxLength(256)
-                  .IsRequired();
+                p.Property(ph => ph.Value)
+                 .HasColumnName("PasswordHash")
+                 .HasMaxLength(255)
+                 .IsRequired();
             });
 
+            // نقش‌ها
             builder.HasMany(u => u.UserRoles)
-                 .WithOne(ur => ur.User)
-                 .HasForeignKey(ur => ur.UserId);
-
-            // Ignore computed properties
-            builder.Ignore(u => u.FullName);
+                   .WithOne()
+                   .HasForeignKey(ur => ur.UserId)
+                   .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

@@ -12,5 +12,6 @@ namespace WebTestApI.ApplicationLayer.Interface
         Task<bool> RegisterStudentAsync(StudentRegisterDto dto);
         Task<bool> RegisterCoachAsync(CoachRegisterDto dto);
         Task<bool> ApproveUserAsync(Guid userId);  // تأیید توسط مربی یا ادمین
+        //Task<bool> ApproveUserAsync(Guid approverId, Guid targetUserId);
     }
 }

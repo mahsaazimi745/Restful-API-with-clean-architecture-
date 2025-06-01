@@ -7,18 +7,20 @@ using WebTestApI.CoreLayer.ValueObjects;
 
 namespace WebTestApI.ApplicationLayer.Dtos
 {
-     public class CoachRegisterDto
+    public class CoachRegisterDto
     {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string FatherName { get; set; }
-            public int Age { get; set; }
-            public string NationalCode { get; set; }
-            public PhoneNumber PhoneNumber { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
-            // می‌تونی فیلدهای اضافی برای مربی هم اضافه کنی مثل رشته تخصصی یا سطح
-        }
-
+        public string FirstName { get; set; } = null!;
+        public string LastName { get; set; } = null!;
+        public string FatherName { get; set; } = null!;
+        public int Age { get; set; }
+        public string NationalCode { get; set; } = null!;
+        public string PhoneNumber { get; set; } = null!;
+        public string Email { get; set; } = null!;
+        public string Password { get; set; } = null!;
+        public string Specialty { get; set; } = null!;
+        public int ExperienceYears { get; set; }
+        public string? CertificationNumber { get; set; }
     }
+
+}
 

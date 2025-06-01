@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebTestApI.CoreLayer.ValueObjects;
 
 namespace WebTestApI.ApplicationLayer.Dtos
 {
-   public class StudentRegisterDto
+   public class UserDto
     {
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
@@ -15,11 +14,7 @@ namespace WebTestApI.ApplicationLayer.Dtos
         public int Age { get; set; }
         public string NationalCode { get; set; } = null!;
         public string PhoneNumber { get; set; } = null!;
-        public string ParentsPhoneNumber { get; set; } = null!;
         public string Email { get; set; } = null!;
         public string Password { get; set; } = null!;
-
     }
-
-    }
-
+}

@@ -5,14 +5,14 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Approval/approve/{userId}": {
+    "/api/Approval/approve/student/{studentId}": {
       "put": {
         "tags": [
           "Approval"
         ],
         "parameters": [
           {
-            "name": "userId",
+            "name": "studentId",
             "in": "path",
             "required": true,
             "schema": {
@@ -21,6 +21,70 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveStudentRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveStudentRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApproveStudentRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Approval/approve/coach/{coachId}": {
+      "put": {
+        "tags": [
+          "Approval"
+        ],
+        "parameters": [
+          {
+            "name": "coachId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -60,17 +124,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRegisterDto"
+                "$ref": "#/components/schemas/StudentRegisterDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRegisterDto"
+                "$ref": "#/components/schemas/StudentRegisterDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRegisterDto"
+                "$ref": "#/components/schemas/StudentRegisterDto"
               }
             }
           }
@@ -91,17 +155,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRegisterDto"
+                "$ref": "#/components/schemas/CoachRegisterDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRegisterDto"
+                "$ref": "#/components/schemas/CoachRegisterDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserRegisterDto"
+                "$ref": "#/components/schemas/CoachRegisterDto"
               }
             }
           }
@@ -116,19 +180,20 @@
   },
   "components": {
     "schemas": {
-      "Email": {
-        "type": "string",
+      "ApproveStudentRequest": {
+        "type": "object",
+        "properties": {
+          "coachId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "level": {
+            "$ref": "#/components/schemas/StudentLevel"
+          }
+        },
         "additionalProperties": false
       },
-      "NationalCode": {
-        "type": "string",
-        "additionalProperties": false
-      },
-      "PhoneNumber": {
-        "type": "string",
-        "additionalProperties": false
-      },
-      "UserRegisterDto": {
+      "CoachRegisterDto": {
         "type": "object",
         "properties": {
           "firstName": {
@@ -148,13 +213,79 @@
             "format": "int32"
           },
           "nationalCode": {
-            "$ref": "#/components/schemas/NationalCode"
+            "type": "string",
+            "nullable": true
           },
           "phoneNumber": {
-            "$ref": "#/components/schemas/PhoneNumber"
+            "type": "string",
+            "nullable": true
           },
           "email": {
-            "$ref": "#/components/schemas/Email"
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialty": {
+            "type": "string",
+            "nullable": true
+          },
+          "experienceYears": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "certificationNumber": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StudentLevel": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "StudentRegisterDto": {
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastName": {
+            "type": "string",
+            "nullable": true
+          },
+          "fatherName": {
+            "type": "string",
+            "nullable": true
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nationalCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentsPhoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
           },
           "password": {
             "type": "string",

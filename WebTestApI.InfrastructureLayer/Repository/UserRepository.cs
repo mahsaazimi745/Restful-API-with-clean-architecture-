@@ -87,7 +87,7 @@ namespace WebTestApI.InfrastructureLayer.Repository
         public async Task<User?> GetByCredentialsAsync(Email email, Password passwordHash)
         {
             return await _context.Users
-                .FirstOrDefaultAsync(u => u.Email == email && u.passwordHash == passwordHash);
+                .FirstOrDefaultAsync(u => u.Email == email && u.PasswordHash == passwordHash);
         }
     }
 }

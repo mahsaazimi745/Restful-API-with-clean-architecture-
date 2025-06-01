@@ -18,7 +18,7 @@ namespace WebTestApI.Controllers
 
         // 🔹 ثبت‌نام دانش‌آموز
         [HttpPost("register-student")]
-        public async Task<IActionResult> RegisterStudent(UserRegisterDto dto)
+        public async Task<IActionResult> RegisterStudent(StudentRegisterDto dto)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace WebTestApI.Controllers
 
         // 🔹 ثبت‌نام مربی
         [HttpPost("register-coach")]
-        public async Task<IActionResult> RegisterCoach(UserRegisterDto dto)
+        public async Task<IActionResult> RegisterCoach(CoachRegisterDto dto)
         {
             try
             {
